@@ -1,28 +1,58 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 
 <head>
-    <title>Factorial</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>Big Factorial</title>
 </head>
 
-<body style="text-align: center; font-size: 20px;">
-    <h2> Factorial </h2>
-    Enter a number: <input id="num">
-    <button onclick="compute()"> Click Here </button>
-    <p id="res"></p>
+<body>
+    <div class="d-flex justify-content-center" id="header">
+        <h1> Big Factorial </h1>
+    </div>
 
+    <!-- input -->
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="input-group custom">
+                <input type="number" class="form-control" placeholder="Enter number here (Eg: 100)" id="num">
+                <div class="input-group-append">
+                    <button class="btn btn-dark" type="button" onclick="compute()">Button</button>
+                </div>
+            </div>
+        </div>
 
-    <script src="./factorial.js"></script>
+        <hr>
+
+        <!-- result -->
+        <div class="row justify-content-center">
+            <div class="form-group custom">
+                <label for="res">Result:</label>
+                <textarea class="form-control" id="res" rows="10" name="text"></textarea>
+            </div>
+        </div>
+    </div>
+
+    <!-- JS -->
+    <script src="factorial.js"></script>
     <script>
         function compute() {
-            num = parseInt(document.getElementById("num").value);
             document.getElementById("res").innerHTML = '';
+            num = parseInt(document.getElementById("num").value);
+            // console.log(num);
+
             let result = fact(num);
-            console.log(result);
+            // console.log(result);
             for (let i = result.length - 1; i >= 0; i--) {
                 document.getElementById("res").innerHTML += result[i];
             }
-            // document.getElementById("res").innerHTML = "The factorial of the number " + i + " is: " + f;
         }
     </script>
 </body>
